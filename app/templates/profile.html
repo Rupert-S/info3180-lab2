@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block main %}
+<div class="header">
+    <h1>Rupert Scott</h1> 
+    <p>@r_scott876</p>
+    <p>Trelawny, Jamaica</p>
+    <img src="{{url_for( 'app/static', filename='geo.jpeg')}"}>
+</div>
+
+<div class="bio">
+    I am a hardworking individual with a years experience in Web development. Contact me and let's work on some projects together.
+</div>
+
+<div class="follow-info">
+    <p class="num">7</p>
+    <p class="num">100</p>
+    <p class="num">200</p>
+    <p>Posts</p>
+    <p>Followers</p>
+    <p>Following</p>
+</div>
+
+<div class="follow-btn">
+    <button type="button" id="follow" class="btn">Follow</button>
+</div>
+{% endblock %}
