@@ -7,7 +7,7 @@ This file creates your application.
 
 from app import app
 from flask import render_template, request, redirect, url_for, flash
-
+import datetime
 
 ###
 # Routing for your application.
@@ -27,12 +27,18 @@ def about():
 @app.route('/profile')
 def profile():
     """Render the website's profile page."""
-    return render_template('profile.html')
+    joined_date = format_date_joined(2019, 2, 7)
+    return render_template('profile.html', joined=joined_date)
 
 
 ###
 # The functions below should be applicable to all Flask apps.
 ###
+
+def format_date_joined(y, m, d):
+    date_joined = datetime.date(y, m, d) # a specific date
+    ## Format the date to return only month and year date
+    return "Joined " + date_joined.strftime("%B, %Y")
 
 @app.route('/<file_name>.txt')
 def send_text_file(file_name):
